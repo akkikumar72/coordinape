@@ -71,6 +71,7 @@
     "setup": "./scripts/setup.sh",
     "db-seed-fresh": "scripts/seed_hasura.sh --clean",
     "db-seed": "scripts/seed_hasura.sh",
+    "cypress:dev": "cypress open > /dev/null",
     "generate": "./scripts/generate-zeus.sh",
     "hasura": "hasura --envfile ../.env --project ./hasura",
     "docker:start": "docker-compose up -d",
