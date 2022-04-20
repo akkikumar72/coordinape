@@ -60,7 +60,7 @@ Stack: **React**, **Hasura** graphql server & **vercel** serverless functions
 - `yarn db-seed-fresh` - Seed the db w/ dummy data
 - `vercel dev`
   - If you're creating a new Vercel project, use these custom settings:
-    - Build Command: `./scripts/link-hardhat.sh && yarn build`
+    - Build Command: `./scripts/link_hardhat.sh && yarn build`
     - Development Command: `craco start`
   - Runs React and the serverless functions in `api/`
 - Goto: http://localhost:3000 and start giving!
