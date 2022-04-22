@@ -181,98 +181,110 @@ describe('epoch Cron Logic', () => {
       const result = await endEpoch(input);
       expect(result).toEqual([]);
       //expect(mockMutation).not.toBeCalled();
-      expect(mockMutation).toBeCalledWith({
-        delete_pending_token_gifts: [
-          { where: { epoch_id: { _eq: 9 } } },
-          { affected_rows: true },
-        ],
-        insert_token_gifts: [
-          {
-            objects: [
-              {
-                circle_id: 1,
-                epoch_id: 9,
-                note: 'Consequatur sit vel et nostrum ut porro. Laborum iure molestiae et facere placeat molestiae iste molestiae. Commodi inventore sequi quia.',
-                recipient_address:
-                  '0x0x3A0e10aBdAca6bF2c38bc4AEea521A84d142A317',
-                recipient_id: '7',
-                sender_address: '0x0xE0E2B4df0ce0216F7c64153A34Ec8F1CA56a4dFC',
-                sender_id: '0',
-                tokens: 10,
-              },
-              {
-                circle_id: 1,
-                epoch_id: 9,
-                note: 'Explicabo aut qui adipisci non. In cupiditate voluptas molestiae fuga voluptatem quia et. Id cupiditate est id voluptates dolorem recusandae est.',
-                recipient_address:
-                  '0x0xaEFC70a327b2DBb76E7cDD5C0DFa9c7Bc62aEd60',
-                recipient_id: '0',
-                sender_address: '0x0x095AdAE8EEc4E0eE86a3d0c9EBE88dF037212fb0',
-                sender_id: '1',
-                tokens: 10,
-              },
-              {
-                circle_id: 1,
-                epoch_id: 9,
-                note: 'Deserunt eius et dolore consequatur et ipsam ut saepe vel. Perspiciatis sit consectetur temporibus officia laborum quae. Perferendis quam ab.',
-                recipient_address:
-                  '0x0x5908b62dc93F9ef469074B0DEDBeb5056CbbCB4c',
-                recipient_id: '3',
-                sender_address: '0x0xe8Ec0DFB85F1d3C4c9d76fcfA1C0ABfDD075ea97',
-                sender_id: '2',
-                tokens: 10,
-              },
-              {
-                circle_id: 1,
-                epoch_id: 9,
-                note: 'Minus quae occaecati. Assumenda sit similique et laudantium vel. Quidem et est vel nihil.',
-                recipient_address:
-                  '0x0xb5eC193dd572DbBa434deb3eb3FA341bDBf0678D',
-                recipient_id: '1',
-                sender_address: '0x0x15F036BDD1fec43baD7a4CdC63EbEa54294aa7A0',
-                sender_id: '3',
-                tokens: 10,
-              },
-              {
-                circle_id: 1,
-                epoch_id: 9,
-                note: 'Nulla aliquid ut. Et fuga hic. Dolorem fuga at quia.',
-                recipient_address:
-                  '0x0xFe4FFcebB2a7D0b3cAE068fCBfafa4C9cc5Fa465',
-                recipient_id: '7',
-                sender_address: '0x0x21effAd8Bf0cAFA65654de7BBb9dB1F96F37Dcb9',
-                sender_id: '4',
-                tokens: 10,
-              },
-              {
-                circle_id: 1,
-                epoch_id: 9,
-                note:
-                  'Voluptatem est placeat et. Velit inventore aut molestias laudantium non. Quibusdam corporis ullam ' +
-                  'corrupti accusantium sed deserunt sunt.',
-                recipient_address:
-                  '0x0xEC69BCed03A1d0e1cac270FAF88AC9F9caea1BF8',
-                recipient_id: '2',
-                sender_address: '0x0xC38bABbDb4FAB50cf2a8E14b5f1a972Bd1B8faAA',
-                sender_id: '5',
-                tokens: 10,
-              },
-              {
-                circle_id: 1,
-                epoch_id: 9,
-                note: 'Et asperiores eaque et est eaque consequuntur quisquam dolorum. Aut est ut odit alias minima hic omnis. Necessitatibus quibusdam excepturi repudiandae porro ratione beatae nesciunt et amet.',
-                recipient_address:
-                  '0x0x8E90b5EC06faDe03b67DCDcbf59Dda670Dc46CbC',
-                recipient_id: '0',
-                sender_address: '0x0xCdfDcFCfAA5EF8c5e3a2DBD3C5eCc66FF5Bbb6AE',
-                sender_id: '6',
-                tokens: 10,
-              },
-            ],
-          },
-          { __typename: true, affected_rows: true },
-        ],
-      });
+      expect(mockMutation).toBeCalledWith(
+        {
+          delete_pending_token_gifts: [
+            { where: { epoch_id: { _eq: 9 } } },
+            { affected_rows: true },
+          ],
+          insert_token_gifts: [
+            {
+              objects: [
+                {
+                  circle_id: 1,
+                  epoch_id: 9,
+                  note: 'Consequatur sit vel et nostrum ut porro. Laborum iure molestiae et facere placeat molestiae iste molestiae. Commodi inventore sequi quia.',
+                  recipient_address:
+                    '0x0x3A0e10aBdAca6bF2c38bc4AEea521A84d142A317',
+                  recipient_id: '7',
+                  sender_address:
+                    '0x0xE0E2B4df0ce0216F7c64153A34Ec8F1CA56a4dFC',
+                  sender_id: '0',
+                  tokens: 10,
+                },
+                {
+                  circle_id: 1,
+                  epoch_id: 9,
+                  note: 'Explicabo aut qui adipisci non. In cupiditate voluptas molestiae fuga voluptatem quia et. Id cupiditate est id voluptates dolorem recusandae est.',
+                  recipient_address:
+                    '0x0xaEFC70a327b2DBb76E7cDD5C0DFa9c7Bc62aEd60',
+                  recipient_id: '0',
+                  sender_address:
+                    '0x0x095AdAE8EEc4E0eE86a3d0c9EBE88dF037212fb0',
+                  sender_id: '1',
+                  tokens: 10,
+                },
+                {
+                  circle_id: 1,
+                  epoch_id: 9,
+                  note: 'Deserunt eius et dolore consequatur et ipsam ut saepe vel. Perspiciatis sit consectetur temporibus officia laborum quae. Perferendis quam ab.',
+                  recipient_address:
+                    '0x0x5908b62dc93F9ef469074B0DEDBeb5056CbbCB4c',
+                  recipient_id: '3',
+                  sender_address:
+                    '0x0xe8Ec0DFB85F1d3C4c9d76fcfA1C0ABfDD075ea97',
+                  sender_id: '2',
+                  tokens: 10,
+                },
+                {
+                  circle_id: 1,
+                  epoch_id: 9,
+                  note: 'Minus quae occaecati. Assumenda sit similique et laudantium vel. Quidem et est vel nihil.',
+                  recipient_address:
+                    '0x0xb5eC193dd572DbBa434deb3eb3FA341bDBf0678D',
+                  recipient_id: '1',
+                  sender_address:
+                    '0x0x15F036BDD1fec43baD7a4CdC63EbEa54294aa7A0',
+                  sender_id: '3',
+                  tokens: 10,
+                },
+                {
+                  circle_id: 1,
+                  epoch_id: 9,
+                  note: 'Nulla aliquid ut. Et fuga hic. Dolorem fuga at quia.',
+                  recipient_address:
+                    '0x0xFe4FFcebB2a7D0b3cAE068fCBfafa4C9cc5Fa465',
+                  recipient_id: '7',
+                  sender_address:
+                    '0x0x21effAd8Bf0cAFA65654de7BBb9dB1F96F37Dcb9',
+                  sender_id: '4',
+                  tokens: 10,
+                },
+                {
+                  circle_id: 1,
+                  epoch_id: 9,
+                  note:
+                    'Voluptatem est placeat et. Velit inventore aut molestias laudantium non. Quibusdam corporis ullam ' +
+                    'corrupti accusantium sed deserunt sunt.',
+                  recipient_address:
+                    '0x0xEC69BCed03A1d0e1cac270FAF88AC9F9caea1BF8',
+                  recipient_id: '2',
+                  sender_address:
+                    '0x0xC38bABbDb4FAB50cf2a8E14b5f1a972Bd1B8faAA',
+                  sender_id: '5',
+                  tokens: 10,
+                },
+                {
+                  circle_id: 1,
+                  epoch_id: 9,
+                  note: 'Et asperiores eaque et est eaque consequuntur quisquam dolorum. Aut est ut odit alias minima hic omnis. Necessitatibus quibusdam excepturi repudiandae porro ratione beatae nesciunt et amet.',
+                  recipient_address:
+                    '0x0x8E90b5EC06faDe03b67DCDcbf59Dda670Dc46CbC',
+                  recipient_id: '0',
+                  sender_address:
+                    '0x0xCdfDcFCfAA5EF8c5e3a2DBD3C5eCc66FF5Bbb6AE',
+                  sender_id: '6',
+                  tokens: 10,
+                },
+              ],
+            },
+            { __typename: true, affected_rows: true },
+          ],
+        },
+        {
+          operationName: 'endEpoch-insertAndDeleteGifts',
+        }
+      );
       expect(mockMutation).toBeCalledWith({
         update_epochs_by_pk: [
           {
