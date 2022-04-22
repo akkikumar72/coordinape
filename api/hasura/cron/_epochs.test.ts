@@ -285,212 +285,215 @@ describe('epoch Cron Logic', () => {
           operationName: 'endEpoch-insertAndDeleteGifts',
         }
       );
-      expect(mockMutation).toBeCalledWith({
-        update_epochs_by_pk: [
-          {
-            pk_columns: { id: 9 },
-            _set: {
-              ended: true,
+      expect(mockMutation).toBeCalledWith(
+        {
+          update_epochs_by_pk: [
+            {
+              pk_columns: { id: 9 },
+              _set: {
+                ended: true,
+              },
+            },
+            { __typename: true },
+          ],
+          __alias: {
+            '0_history': {
+              insert_histories_one: [
+                {
+                  object: {
+                    bio: 'Repellat quisquam recusandae alias consequuntur corporis. Ratione ut sunt qui amet iure ut libero qui recusandae. Nulla quam ipsam nobis cupiditate sed dignissimos. Incidunt accusantium sed libero repudiandae esse blanditiis natus et eos. Velit omnis et porro ut et ipsam explicabo eligendi occaecati.',
+                    circle_id: 1,
+                    epoch_id: 9,
+                    user_id: 0,
+                  },
+                },
+                { __typename: true },
+              ],
+            },
+            '0_userReset': {
+              update_users_by_pk: [
+                {
+                  _set: {
+                    bio: null,
+                    epoch_first_visit: true,
+                    give_token_received: 0,
+                    give_token_remaining: 100,
+                    non_receiver: true,
+                  },
+                  pk_columns: { id: 0 },
+                },
+                { __typename: true },
+              ],
+            },
+            '1_history': {
+              insert_histories_one: [
+                {
+                  object: {
+                    bio: 'Et saepe eum dicta eum eaque enim ipsum inventore debitis. Aspernatur deserunt quam tempore a velit provident velit. Nostrum ipsam qui nobis repellendus fugiat velit sit. Placeat fuga doloribus. Placeat ullam minima ducimus temporibus modi aut architecto.',
+                    circle_id: 1,
+                    epoch_id: 9,
+                    user_id: 1,
+                  },
+                },
+                { __typename: true },
+              ],
+            },
+            '1_userReset': {
+              update_users_by_pk: [
+                {
+                  _set: {
+                    bio: null,
+                    epoch_first_visit: true,
+                    give_token_received: 0,
+                    give_token_remaining: 200,
+                    non_receiver: true,
+                  },
+                  pk_columns: { id: 1 },
+                },
+                { __typename: true },
+              ],
+            },
+            '2_history': {
+              insert_histories_one: [
+                {
+                  object: {
+                    bio: 'Totam voluptates explicabo exercitationem ut quis. Magni cupiditate sit. Soluta sint non. Ut ullam quos qui illo error sunt laborum ratione a. Quaerat cumque incidunt aut provident esse hic.',
+                    circle_id: 1,
+                    epoch_id: 9,
+                    user_id: 2,
+                  },
+                },
+                { __typename: true },
+              ],
+            },
+            '2_userReset': {
+              update_users_by_pk: [
+                {
+                  _set: {
+                    bio: null,
+                    epoch_first_visit: true,
+                    give_token_received: 0,
+                    give_token_remaining: 300,
+                  },
+                  pk_columns: { id: 2 },
+                },
+                { __typename: true },
+              ],
+            },
+            '3_history': {
+              insert_histories_one: [
+                {
+                  object: {
+                    bio: 'Quos esse ut ab voluptas sed quae nam. Sint autem rerum doloremque. Aut ut ut eos ducimus eos saepe. Vel in ut dolorem et molestiae ea ut sunt. Quidem est consequuntur aut est fuga est placeat ex.',
+                    circle_id: 1,
+                    epoch_id: 9,
+                    user_id: 3,
+                  },
+                },
+                { __typename: true },
+              ],
+            },
+            '3_userReset': {
+              update_users_by_pk: [
+                {
+                  _set: {
+                    bio: null,
+                    epoch_first_visit: true,
+                    give_token_received: 0,
+                    give_token_remaining: 400,
+                  },
+                  pk_columns: { id: 3 },
+                },
+                { __typename: true },
+              ],
+            },
+            '4_history': {
+              insert_histories_one: [
+                {
+                  object: {
+                    bio:
+                      'Voluptas enim ex eveniet facere. Aut delectus aut nam et dolorum. Fugit repellendus hic. Qui ex culpa. Voluptate vel labore omnis ut est sunt corporis ' +
+                      'alias est.',
+                    circle_id: 1,
+                    epoch_id: 9,
+                    user_id: 4,
+                  },
+                },
+                { __typename: true },
+              ],
+            },
+            '4_userReset': {
+              update_users_by_pk: [
+                {
+                  _set: {
+                    bio: null,
+                    epoch_first_visit: true,
+                    give_token_received: 0,
+                    give_token_remaining: 500,
+                  },
+                  pk_columns: { id: 4 },
+                },
+                { __typename: true },
+              ],
+            },
+            '5_history': {
+              insert_histories_one: [
+                {
+                  object: {
+                    bio: 'Sequi voluptas culpa non aut rerum impedit. Rem voluptates voluptas fuga totam. Ut non fugiat. Omnis repellat quasi ipsum rem eos quod recusandae. Optio laudantium et incidunt.',
+                    circle_id: 1,
+                    epoch_id: 9,
+                    user_id: 5,
+                  },
+                },
+                { __typename: true },
+              ],
+            },
+            '5_userReset': {
+              update_users_by_pk: [
+                {
+                  _set: {
+                    bio: null,
+                    epoch_first_visit: true,
+                    give_token_received: 0,
+                    give_token_remaining: 600,
+                  },
+                  pk_columns: { id: 5 },
+                },
+                { __typename: true },
+              ],
+            },
+            '6_history': {
+              insert_histories_one: [
+                {
+                  object: {
+                    bio: 'Molestias facere quia et ab quo occaecati quia ipsum. Qui accusantium odit. Molestias dolore aut. Quis ut incidunt omnis delectus voluptas minima quia ut. Sunt qui similique ut quam.',
+                    circle_id: 1,
+                    epoch_id: 9,
+                    user_id: 6,
+                  },
+                },
+                { __typename: true },
+              ],
+            },
+            '6_userReset': {
+              update_users_by_pk: [
+                {
+                  _set: {
+                    bio: null,
+                    epoch_first_visit: true,
+                    give_token_received: 0,
+                    give_token_remaining: 700,
+                  },
+                  pk_columns: { id: 6 },
+                },
+                { __typename: true },
+              ],
             },
           },
-          { __typename: true },
-        ],
-        __alias: {
-          '0_history': {
-            insert_histories_one: [
-              {
-                object: {
-                  bio: 'Repellat quisquam recusandae alias consequuntur corporis. Ratione ut sunt qui amet iure ut libero qui recusandae. Nulla quam ipsam nobis cupiditate sed dignissimos. Incidunt accusantium sed libero repudiandae esse blanditiis natus et eos. Velit omnis et porro ut et ipsam explicabo eligendi occaecati.',
-                  circle_id: 1,
-                  epoch_id: 9,
-                  user_id: 0,
-                },
-              },
-              { __typename: true },
-            ],
-          },
-          '0_userReset': {
-            update_users_by_pk: [
-              {
-                _set: {
-                  bio: null,
-                  epoch_first_visit: true,
-                  give_token_received: 0,
-                  give_token_remaining: 100,
-                  non_receiver: true,
-                },
-                pk_columns: { id: 0 },
-              },
-              { __typename: true },
-            ],
-          },
-          '1_history': {
-            insert_histories_one: [
-              {
-                object: {
-                  bio: 'Et saepe eum dicta eum eaque enim ipsum inventore debitis. Aspernatur deserunt quam tempore a velit provident velit. Nostrum ipsam qui nobis repellendus fugiat velit sit. Placeat fuga doloribus. Placeat ullam minima ducimus temporibus modi aut architecto.',
-                  circle_id: 1,
-                  epoch_id: 9,
-                  user_id: 1,
-                },
-              },
-              { __typename: true },
-            ],
-          },
-          '1_userReset': {
-            update_users_by_pk: [
-              {
-                _set: {
-                  bio: null,
-                  epoch_first_visit: true,
-                  give_token_received: 0,
-                  give_token_remaining: 200,
-                  non_receiver: true,
-                },
-                pk_columns: { id: 1 },
-              },
-              { __typename: true },
-            ],
-          },
-          '2_history': {
-            insert_histories_one: [
-              {
-                object: {
-                  bio: 'Totam voluptates explicabo exercitationem ut quis. Magni cupiditate sit. Soluta sint non. Ut ullam quos qui illo error sunt laborum ratione a. Quaerat cumque incidunt aut provident esse hic.',
-                  circle_id: 1,
-                  epoch_id: 9,
-                  user_id: 2,
-                },
-              },
-              { __typename: true },
-            ],
-          },
-          '2_userReset': {
-            update_users_by_pk: [
-              {
-                _set: {
-                  bio: null,
-                  epoch_first_visit: true,
-                  give_token_received: 0,
-                  give_token_remaining: 300,
-                },
-                pk_columns: { id: 2 },
-              },
-              { __typename: true },
-            ],
-          },
-          '3_history': {
-            insert_histories_one: [
-              {
-                object: {
-                  bio: 'Quos esse ut ab voluptas sed quae nam. Sint autem rerum doloremque. Aut ut ut eos ducimus eos saepe. Vel in ut dolorem et molestiae ea ut sunt. Quidem est consequuntur aut est fuga est placeat ex.',
-                  circle_id: 1,
-                  epoch_id: 9,
-                  user_id: 3,
-                },
-              },
-              { __typename: true },
-            ],
-          },
-          '3_userReset': {
-            update_users_by_pk: [
-              {
-                _set: {
-                  bio: null,
-                  epoch_first_visit: true,
-                  give_token_received: 0,
-                  give_token_remaining: 400,
-                },
-                pk_columns: { id: 3 },
-              },
-              { __typename: true },
-            ],
-          },
-          '4_history': {
-            insert_histories_one: [
-              {
-                object: {
-                  bio:
-                    'Voluptas enim ex eveniet facere. Aut delectus aut nam et dolorum. Fugit repellendus hic. Qui ex culpa. Voluptate vel labore omnis ut est sunt corporis ' +
-                    'alias est.',
-                  circle_id: 1,
-                  epoch_id: 9,
-                  user_id: 4,
-                },
-              },
-              { __typename: true },
-            ],
-          },
-          '4_userReset': {
-            update_users_by_pk: [
-              {
-                _set: {
-                  bio: null,
-                  epoch_first_visit: true,
-                  give_token_received: 0,
-                  give_token_remaining: 500,
-                },
-                pk_columns: { id: 4 },
-              },
-              { __typename: true },
-            ],
-          },
-          '5_history': {
-            insert_histories_one: [
-              {
-                object: {
-                  bio: 'Sequi voluptas culpa non aut rerum impedit. Rem voluptates voluptas fuga totam. Ut non fugiat. Omnis repellat quasi ipsum rem eos quod recusandae. Optio laudantium et incidunt.',
-                  circle_id: 1,
-                  epoch_id: 9,
-                  user_id: 5,
-                },
-              },
-              { __typename: true },
-            ],
-          },
-          '5_userReset': {
-            update_users_by_pk: [
-              {
-                _set: {
-                  bio: null,
-                  epoch_first_visit: true,
-                  give_token_received: 0,
-                  give_token_remaining: 600,
-                },
-                pk_columns: { id: 5 },
-              },
-              { __typename: true },
-            ],
-          },
-          '6_history': {
-            insert_histories_one: [
-              {
-                object: {
-                  bio: 'Molestias facere quia et ab quo occaecati quia ipsum. Qui accusantium odit. Molestias dolore aut. Quis ut incidunt omnis delectus voluptas minima quia ut. Sunt qui similique ut quam.',
-                  circle_id: 1,
-                  epoch_id: 9,
-                  user_id: 6,
-                },
-              },
-              { __typename: true },
-            ],
-          },
-          '6_userReset': {
-            update_users_by_pk: [
-              {
-                _set: {
-                  bio: null,
-                  epoch_first_visit: true,
-                  give_token_received: 0,
-                  give_token_remaining: 700,
-                },
-                pk_columns: { id: 6 },
-              },
-              { __typename: true },
-            ],
-          },
         },
-      });
+        { operationName: 'endEpoch-update' }
+      );
       expect(mockMutation).toBeCalledWith({
         update_epochs_by_pk: [
           { _set: { number: 1 }, pk_columns: { id: 9 } },
