@@ -21,6 +21,16 @@ export type ValueTypes = {
     recipient_id: number;
     tokens: number;
   };
+  ['AllocationCsvInput']: {
+    circle_id: number;
+    epoch?: number | null;
+    epoch_id?: number | null;
+    grant?: number | null;
+  };
+  ['AllocationCsvResponse']: AliasType<{
+    file?: boolean;
+    __typename?: boolean;
+  }>;
   ['Allocations']: {
     allocations?: ValueTypes['Allocation'][];
     circle_id: number;
@@ -1911,6 +1921,10 @@ columns and relationships of "distributions" */
     adminUpdateUser?: [
       { payload: ValueTypes['AdminUpdateUserInput'] },
       ValueTypes['UserResponse']
+    ];
+    allocationCsv?: [
+      { payload: ValueTypes['AllocationCsvInput'] },
+      ValueTypes['AllocationCsvResponse']
     ];
     createCircle?: [
       { payload: ValueTypes['CreateCircleInput'] },
@@ -4748,6 +4762,10 @@ columns and relationships of "distributions" */
 export type ModelTypes = {
   ['AdminUpdateUserInput']: GraphQLTypes['AdminUpdateUserInput'];
   ['Allocation']: GraphQLTypes['Allocation'];
+  ['AllocationCsvInput']: GraphQLTypes['AllocationCsvInput'];
+  ['AllocationCsvResponse']: {
+    file: string;
+  };
   ['Allocations']: GraphQLTypes['Allocations'];
   ['AllocationsResponse']: {
     /** An object relationship */
@@ -5372,6 +5390,7 @@ columns and relationships of "distributions" */
   /** mutation root */
   ['mutation_root']: {
     adminUpdateUser?: ModelTypes['UserResponse'];
+    allocationCsv?: ModelTypes['AllocationCsvResponse'];
     createCircle?: ModelTypes['CreateCircleResponse'];
     createEpoch?: ModelTypes['EpochResponse'];
     createNominee?: ModelTypes['CreateNomineeResponse'];
@@ -6333,6 +6352,16 @@ export type GraphQLTypes = {
     note: string;
     recipient_id: number;
     tokens: number;
+  };
+  ['AllocationCsvInput']: {
+    circle_id: number;
+    epoch?: number;
+    epoch_id?: number;
+    grant?: number;
+  };
+  ['AllocationCsvResponse']: {
+    __typename: 'AllocationCsvResponse';
+    file: string;
   };
   ['Allocations']: {
     allocations?: Array<GraphQLTypes['Allocation']>;
@@ -8010,6 +8039,7 @@ columns and relationships of "distributions" */
   ['mutation_root']: {
     __typename: 'mutation_root';
     adminUpdateUser?: GraphQLTypes['UserResponse'];
+    allocationCsv?: GraphQLTypes['AllocationCsvResponse'];
     createCircle?: GraphQLTypes['CreateCircleResponse'];
     createEpoch?: GraphQLTypes['EpochResponse'];
     createNominee?: GraphQLTypes['CreateNomineeResponse'];

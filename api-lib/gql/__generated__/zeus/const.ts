@@ -77,6 +77,32 @@ export const AllTypesProps: Record<string, any> = {
       required: true,
     },
   },
+  AllocationCsvInput: {
+    circle_id: {
+      type: 'Int',
+      array: false,
+      arrayRequired: false,
+      required: true,
+    },
+    epoch: {
+      type: 'Int',
+      array: false,
+      arrayRequired: false,
+      required: false,
+    },
+    epoch_id: {
+      type: 'Int',
+      array: false,
+      arrayRequired: false,
+      required: false,
+    },
+    grant: {
+      type: 'Float',
+      array: false,
+      arrayRequired: false,
+      required: false,
+    },
+  },
   Allocations: {
     allocations: {
       type: 'Allocation',
@@ -9035,6 +9061,14 @@ export const AllTypesProps: Record<string, any> = {
     adminUpdateUser: {
       payload: {
         type: 'AdminUpdateUserInput',
+        array: false,
+        arrayRequired: false,
+        required: true,
+      },
+    },
+    allocationCsv: {
+      payload: {
+        type: 'AllocationCsvInput',
         array: false,
         arrayRequired: false,
         required: true,
@@ -23210,6 +23244,9 @@ export const ReturnTypes: Record<string, any> = {
     ttl: 'Int',
     refresh: 'Boolean',
   },
+  AllocationCsvResponse: {
+    file: 'String',
+  },
   AllocationsResponse: {
     user: 'users',
     user_id: 'Int',
@@ -24352,6 +24389,7 @@ export const ReturnTypes: Record<string, any> = {
   },
   mutation_root: {
     adminUpdateUser: 'UserResponse',
+    allocationCsv: 'AllocationCsvResponse',
     createCircle: 'CreateCircleResponse',
     createEpoch: 'EpochResponse',
     createNominee: 'CreateNomineeResponse',

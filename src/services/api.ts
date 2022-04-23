@@ -1,17 +1,12 @@
 import { Web3Provider } from '@ethersproject/providers';
-import axios from 'axios';
 
-import { API_URL } from 'config/env';
 import { getSignature } from 'utils/provider';
 
-import { IApiLogin, IApiManifest, IApiFullCircle } from 'types';
-
-axios.defaults.baseURL = API_URL;
+import { IApiLogin } from 'types';
 
 export class APIService {
   provider = undefined as Web3Provider | undefined;
   token = undefined as string | undefined;
-  axios = axios.create({ baseURL: API_URL });
 
   constructor(provider?: Web3Provider, token?: string) {
     this.provider = provider;
@@ -30,8 +25,6 @@ export class APIService {
       const authHeader = 'Bearer ' + token;
       auth.headers = { Authorization: authHeader };
     }
-
-    this.axios = axios.create({ baseURL: API_URL, ...auth });
   }
 
   login = async (address: string): Promise<IApiLogin> => {
@@ -64,28 +57,6 @@ export class APIService {
       }),
     });
     return await rawResponse.json();
-  };
-
-  getManifest = async (circleId?: number): Promise<IApiManifest> => {
-    const response = await this.axios.get('/v2/manifest', {
-      params: {
-        circle_id: circleId,
-      },
-    });
-    return response.data;
-  };
-
-  getFullCircle = async (circleId: number): Promise<IApiFullCircle> => {
-    const response = await this.axios.get(`/v2/full-circle`, {
-      params: {
-        circle_id: circleId,
-      },
-    });
-    return response.data;
-  };
-
-  downloadCSV = async (circleId: number, epoch: number): Promise<any> => {
-    return this.axios.get(`/v2/${circleId}/csv?epoch=${epoch}`);
   };
 }
 
